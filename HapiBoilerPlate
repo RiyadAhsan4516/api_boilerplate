@@ -6,7 +6,24 @@ git clone https://github.com/RiyadAhsan4516/hapijs-typescript-boilerplate.git
 # Check if the cloning was successful
 if [ $? -eq 0 ]; then
   echo "Repository cloned successfully."
-  cd hapijs-typescript-boilerplate
+  
+  # Prompt user for a new folder name
+  read -p "Enter a new folder name (or press Enter to keep the default): " new_folder_name
+  
+  # Set the new folder name or keep the default
+  if [ -z "$new_folder_name" ]; then
+    folder_name="hapijs-typescript-boilerplate"
+  else
+    folder_name="$new_folder_name"
+  fi
+
+  # Rename the cloned folder
+  mv hapijs-typescript-boilerplate "$folder_name"
+
+  # Remove .git directory from the cloned folder
+  rm -rf "$folder_name/.git"
+
+  cd "$folder_name"
 
   # Ask for user confirmation
   read -p "Do you want to proceed with the installation? (y/n): " proceed
@@ -64,4 +81,3 @@ else
 fi
 
 #chmod +x hapiscript.sh (give write permission to the script)
-
