@@ -8,11 +8,16 @@ if [ $? -eq 0 ]; then
   echo "Repository cloned successfully."
   
   # Prompt user for a new folder name
-  read -p "Enter a new folder name (or press Enter to keep the default): " new_folder_name
+      echo "// ********************************************
+// *                                          *
+// *         SET PROJECT NAME	              *
+// *                                          *
+// ********************************************"
+  read -p "What should be the name of your project? (press Enter to keep the default): " new_folder_name
   
   # Set the new folder name or keep the default
   if [ -z "$new_folder_name" ]; then
-    folder_name="hapijs-typescript-boilerplate"
+    folder_name="Hapijs-Project"
   else
     folder_name="$new_folder_name"
   fi
