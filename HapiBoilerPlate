@@ -13,7 +13,7 @@ if [ $? -eq 0 ]; then
 // *         SET PROJECT NAME	              *
 // *                                          *
 // ********************************************"
-  read -p "What should be the name of your project? (press Enter to keep the default): " new_folder_name
+  read -r "What should be the name of your project? (press Enter to keep the default): " new_folder_name
   
   # Set the new folder name or keep the default
   if [ -z "$new_folder_name" ]; then
@@ -28,10 +28,10 @@ if [ $? -eq 0 ]; then
   # Remove .git directory from the cloned folder
   rm -rf "$folder_name/.git"
 
-  cd "$folder_name"
+  cd "$folder_name" || exit
 
   # Ask for user confirmation
-  read -p "Do you want to proceed with the installation? (y/n): " proceed
+  read -r "Do you want to proceed with the installation? (y/n): " proceed
 
   # Check user's response
   if [[ "$proceed" == "y" || "$proceed" == "Y" || "$proceed" == "" ]]; then
@@ -51,13 +51,13 @@ if [ $? -eq 0 ]; then
 // ********************************************"
       
       echo "Please enter the values for the fields in .env file:"
-      read -p "NODE_ENV: " field1_value
-      read -p "PORT: " field2_value
-      read -p "LOCALHOST: " field3_value
-      read -p "DB_USER: " field4_value
-      read -s -p "DB_PASSWORD: " field5_value
+      read -r "NODE_ENV: " field1_value
+      read -r "PORT: " field2_value
+      read -r "LOCALHOST: " field3_value
+      read -r "DB_USER: " field4_value
+      read -s -r "DB_PASSWORD: " field5_value
       echo
-      read -p "DB_LOCAL: " field6_value
+      read -r "DB_LOCAL: " field6_value
       
       echo "NODE_ENV=$field1_value" > .env
       echo "PORT=$field2_value" >> .env
