@@ -1,4 +1,4 @@
-# HapiScript_boilerplate
+# api_boilerplate
 Run the follwoing command in your terminal and follow the process
 
-<code> wget "https://raw.githubusercontent.com/RiyadAhsan4516/HapiScript_boilerplate/main/HapiBoilerPlate" -O HapiBoilerPlate.sh && chmod +x HapiBoilerPlate.sh && ./HapiBoilerPlate.sh && rm HapiBoilerPlate.sh </code>
+<code> wget "https://raw.githubusercontent.com/RiyadAhsan4516/api_boilerplate/main/apiBoilerplate" -O apiBoilerPlate.sh && chmod +x apiBoilerPlate.sh && ./apiBoilerPlate.sh && rm apiBoilerPlate.sh </code>
